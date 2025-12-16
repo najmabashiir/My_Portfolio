@@ -12,6 +12,7 @@ import { motion } from 'framer-motion';
 import { RESUME_DATA } from './constants';
 import { ArrowDown, Github, Linkedin, Mail, Download, CheckCircle2, Facebook } from 'lucide-react';
 import TypewriterText from './components/TypewriterText';
+import WhatsAppButton from './components/WhatsAppButton';
 
 const App: React.FC = () => {
   return (
@@ -175,6 +176,8 @@ const App: React.FC = () => {
       </main>
 
 
+
+      <WhatsAppButton />
 
       <footer className="bg-slate-950 py-8 border-t border-slate-900 text-center text-slate-500 text-sm">
         <p>&copy; {new Date().getFullYear()} {RESUME_DATA.name}. Built with React, Three.js & Gemini.</p>
