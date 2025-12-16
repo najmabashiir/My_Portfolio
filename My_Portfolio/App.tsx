@@ -11,28 +11,29 @@ const ChatBot = lazy(() => import('./components/ChatBot'));
 import { motion } from 'framer-motion';
 import { RESUME_DATA } from './constants';
 import { ArrowDown, Github, Linkedin, Mail, Download, CheckCircle2 } from 'lucide-react';
+import TypewriterText from './components/TypewriterText';
 
 const App: React.FC = () => {
   return (
     <div className="bg-slate-950 min-h-screen text-slate-50 selection:bg-cyan-500/30 font-inter">
       <Navbar />
-      
+
       <main>
         {/* Hero Section */}
         <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden py-20 lg:py-0">
           {/* 3D Background - Kept subtle */}
           <div className="opacity-60">
-            <Suspense fallback={<div style={{width: '100%', height: '100%'}} />}>
+            <Suspense fallback={<div style={{ width: '100%', height: '100%' }} />}>
               <Hero3D />
             </Suspense>
           </div>
-          
+
           {/* Grid Pattern Overlay to match reference */}
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_at_center,black_60%,transparent_100%)] pointer-events-none"></div>
 
           <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full">
             <div className="grid grid-cols-2 gap-12 lg:gap-20 items-center">
-              
+
               {/* Left Column: Text Info */}
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
@@ -52,11 +53,11 @@ const App: React.FC = () => {
                 <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-2 text-white">
                   {RESUME_DATA.name}
                 </h1>
-                
+
                 <div className="flex items-center gap-4 mb-6">
                   <div className="h-1 w-12 bg-cyan-500 rounded-full"></div>
                   <p className="text-2xl md:text-3xl text-cyan-400 font-medium">
-                    {RESUME_DATA.title}
+                    <TypewriterText texts={RESUME_DATA.titles} className="text-cyan-400" />
                   </p>
                 </div>
 
@@ -96,10 +97,10 @@ const App: React.FC = () => {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-blue-600/20 blur-[100px] rounded-full -z-10"></div>
 
                 <div className="bg-slate-900/60 backdrop-blur-xl border border-slate-800 rounded-3xl p-6 md:p-8 shadow-2xl relative overflow-hidden group hover:border-cyan-500/30 transition-colors">
-                  
+
                   {/* Vertical Layout: Image on Top, Content Below */}
                   <div className="flex flex-col items-center">
-                    
+
                     {/* Profile Image - Top Center */}
                     <div className="relative rounded-2xl overflow-hidden aspect-[4/5] shadow-2xl shadow-blue-900/20 mb-8 w-72">
                       <img
@@ -146,13 +147,13 @@ const App: React.FC = () => {
                     </div>
 
                   </div>
-                  
+
                 </div>
               </motion.div>
 
             </div>
           </div>
-          
+
           {/* Scroll Indicator */}
           <motion.div
             initial={{ opacity: 0 }}

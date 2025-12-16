@@ -3,6 +3,7 @@ import { Project, Experience, Skill, Workshop } from "./types";
 export const RESUME_DATA = {
   name: "Najma Bashir",
   title: "Web Developer",
+  titles: ["Web Developer", "UI/UX Designer", "Data Scientist"],
   summary:
     "I build accessible, pixel-perfect, and performant web experiences. With a passion for modern web technologies, I specialize in the React ecosystem, creating intuitive user interfaces and robust backend solutions.",
   location: "Somalia-Mogadishu",
