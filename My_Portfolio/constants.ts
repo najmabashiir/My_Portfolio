@@ -55,27 +55,19 @@ export const PROJECTS: Project[] = [
 export const EXPERIENCE: Experience[] = [
   {
     id: 1,
-    role: "Senior Frontend Engineer",
-    company: "TechFlow Systems",
-    period: "2021 - Present",
+    role: "Web Development Intern",
+    company: "Hami Skills",
+    period: "Nov 2025",
     description:
-      "Leading the frontend team in migrating legacy monoliths to micro-frontends. Improved site performance by 40%.",
+      "Completed a 4-week intensive internship. Collaborated with a team to build real-world projects like the Hami MiniMarket, gaining hands-on experience in full-stack development and team workflows.",
   },
   {
     id: 2,
-    role: "Fullstack Developer",
-    company: "Creative Solutions Inc.",
-    period: "2018 - 2021",
+    role: "Freelance Developer",
+    company: "Jumhuriya University",
+    period: "Early 2025",
     description:
-      "Developed and maintained multiple client projects. Implemented CI/CD pipelines and automated testing strategies.",
-  },
-  {
-    id: 3,
-    role: "Junior Web Developer",
-    company: "StartUp Node",
-    period: "2016 - 2018",
-    description:
-      "Collaborated with designers to implement responsive UI components. Built RESTful APIs using Node.js.",
+      "Worked as a freelancer on various development projects. Collaborated with university teams to deliver digital solutions and enhance web presence.",
   },
 ];
 
