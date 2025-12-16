@@ -43,12 +43,12 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 3,
-    title: "Immersive 3D Portfolio",
+    title: "Coffee Shop Website",
     description:
-      "An award-winning portfolio site using React Three Fiber to create immersive web experiences.",
-    tags: ["R3F", "WebGL", "Blender", "React"],
-    imageUrl: "https://picsum.photos/600/400?random=3",
-    link: "#",
+      "A modern, responsive coffee shop website featuring an elegant dark theme, smooth animations, and a user-friendly layout for browsing menus and services.",
+    tags: ["HTML5", "CSS3", "JavaScript", "Responsive Design"],
+    imageUrl: "/images/coffee-shop.png",
+    link: "https://github.com/najmabashiir/Website-Coffee",
   },
 ];
 
