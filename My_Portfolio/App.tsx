@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import Navbar from './components/Navbar';
-import Hero3D from './components/Hero3D';
+const Hero3D = lazy(() => import('./components/Hero3D'));
 import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Experience from './components/Experience';
 import Workshops from './components/Workshops';
 import Contact from './components/Contact';
-import ChatBot from './components/ChatBot';
+const ChatBot = lazy(() => import('./components/ChatBot'));
 import { motion } from 'framer-motion';
 import { RESUME_DATA } from './constants';
 import { ArrowDown, Github, Linkedin, Mail, Download, CheckCircle2 } from 'lucide-react';
@@ -22,7 +22,9 @@ const App: React.FC = () => {
         <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden py-20 lg:py-0">
           {/* 3D Background - Kept subtle */}
           <div className="opacity-60">
-            <Hero3D />
+            <Suspense fallback={<div style={{width: '100%', height: '100%'}} />}>
+              <Hero3D />
+            </Suspense>
           </div>
           
           {/* Grid Pattern Overlay to match reference */}
@@ -170,7 +172,9 @@ const App: React.FC = () => {
         <Contact />
       </main>
 
-      <ChatBot />
+      <Suspense fallback={null}>
+        <ChatBot />
+      </Suspense>
 
       <footer className="bg-slate-950 py-8 border-t border-slate-900 text-center text-slate-500 text-sm">
         <p>&copy; {new Date().getFullYear()} {RESUME_DATA.name}. Built with React, Three.js & Gemini.</p>

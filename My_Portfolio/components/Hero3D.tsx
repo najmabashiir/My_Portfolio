@@ -1,7 +1,10 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, Suspense, lazy } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, Sphere, MeshDistortMaterial, Stars, Float } from '@react-three/drei';
+import { OrbitControls, Sphere, MeshDistortMaterial, Float } from '@react-three/drei';
 import * as THREE from 'three';
+
+const StarsLazy = lazy(() => import('./Hero3DStars'));
+const ParticlesLazy = lazy(() => import('./Hero3DParticles'));
 
 // Use 'any' cast to bypass missing JSX definitions for R3F elements
 const Points = 'points' as any;
@@ -44,45 +47,7 @@ const AnimatedSphere = () => {
   );
 };
 
-const Particles = () => {
-  const ref = useRef<THREE.Points>(null);
-  
-  // Generate random particles
-  const [positions] = useState(() => {
-    const pos = new Float32Array(2000 * 3);
-    for (let i = 0; i < 2000 * 3; i++) {
-      pos[i] = (Math.random() - 0.5) * 15;
-    }
-    return pos;
-  });
-
-  useFrame((state) => {
-    if (ref.current) {
-      ref.current.rotation.y = state.clock.getElapsedTime() * 0.05;
-      ref.current.rotation.x = state.clock.getElapsedTime() * 0.02;
-    }
-  });
-
-  return (
-    <Points ref={ref}>
-      <BufferGeometry>
-        <BufferAttribute
-          attach="attributes-position"
-          count={positions.length / 3}
-          array={positions}
-          itemSize={3}
-        />
-      </BufferGeometry>
-      <PointsMaterial
-        size={0.03}
-        color="#22d3ee"
-        sizeAttenuation={true}
-        transparent={true}
-        opacity={0.6}
-      />
-    </Points>
-  );
-};
+// Particles moved to a lazy-loaded module (Hero3DParticles)
 
 const Hero3D: React.FC = () => {
   return (
@@ -97,8 +62,10 @@ const Hero3D: React.FC = () => {
           <AnimatedSphere />
         </Float>
         
-        <Particles />
-        <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
+        <Suspense fallback={null}>
+          <ParticlesLazy />
+          <StarsLazy />
+        </Suspense>
         
         <OrbitControls enableZoom={false} enablePan={false} rotateSpeed={0.5} autoRotate autoRotateSpeed={0.5} />
       </Canvas>

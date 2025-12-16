@@ -19,5 +19,25 @@ export default defineConfig(({ mode }) => {
           '@': path.resolve(__dirname, '.'),
         }
       }
+      ,
+      build: {
+        // Raise the chunk size warning limit to avoid noisy warnings for intentional large chunks
+        chunkSizeWarningLimit: 1200,
+        rollupOptions: {
+          output: {
+            manualChunks(id: string) {
+              if (id.includes('node_modules')) {
+                if (id.includes('three')) return 'three-vendors';
+                if (id.includes('@react-three/fiber')) return 'r3f';
+                if (id.includes('@react-three/drei')) return 'drei';
+                if (id.includes('framer-motion')) return 'framer-motion';
+                if (id.includes('lucide-react')) return 'lucide';
+                if (id.includes('@google/genai')) return 'genai';
+                return 'vendor';
+              }
+            }
+          }
+        }
+      }
     };
 });
