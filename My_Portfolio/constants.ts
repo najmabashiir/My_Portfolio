@@ -25,21 +25,21 @@ export const SKILLS: Skill[] = [
 export const PROJECTS: Project[] = [
   {
     id: 1,
-    title: "Hami MiniMarket",
+    title: "Hami MiniMarket App",
     description:
       "A responsive e-commerce application developed during my Hami Skills internship. Features product categorization, car management, and a clean UI for fresh produce shopping.",
-    tags: ["React", "Internship", "UI/UX", "Frontend"],
+    tags: ["React", "Tailwind CSS", "Vite", "Commerce.js"],
     imageUrl: "/images/hami-market.png",
     link: "https://github.com/najmabashiir/week3_project",
   },
   {
     id: 2,
-    title: "AI Content Generator",
+    title: "Hami Market Landing Page",
     description:
-      "SaaS platform leveraging LLMs to help marketers generate blog posts and social media content efficiently.",
-    tags: ["Next.js", "Gemini API", "Tailwind", "Stripe"],
-    imageUrl: "https://picsum.photos/600/400?random=2",
-    link: "#",
+      "A responsive landing page for a local grocery store. Built with a focus on semantic HTML and modern CSS flexbox/grid layouts.",
+    tags: ["HTML5", "CSS3", "JavaScript"],
+    imageUrl: "/images/hami-landing.png",
+    link: "https://github.com/najmabashiir/HamiSkills-Internship-Web-Development-Track-Week-1-Project-",
   },
   {
     id: 3,
