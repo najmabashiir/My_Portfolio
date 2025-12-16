@@ -59,7 +59,12 @@ const Contact: React.FC = () => {
             </div>
           </div>
 
-          <form className="space-y-4 bg-slate-950 p-8 rounded-2xl border border-slate-800">
+          <form
+            action={`mailto:${RESUME_DATA.email}`}
+            method="POST"
+            encType="text/plain"
+            className="space-y-4 bg-slate-950 p-8 rounded-2xl border border-slate-800"
+          >
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
                 <label className="text-sm font-medium text-slate-300">Name</label>
