@@ -25,12 +25,12 @@ export const SKILLS: Skill[] = [
 export const PROJECTS: Project[] = [
   {
     id: 1,
-    title: "E-Commerce Dashboard",
+    title: "Hami MiniMarket",
     description:
-      "A real-time analytics dashboard for e-commerce stores featuring data visualization with D3.js and real-time updates via WebSockets.",
-    tags: ["React", "TypeScript", "D3.js", "Node.js"],
-    imageUrl: "https://picsum.photos/600/400?random=1",
-    link: "#",
+      "A responsive e-commerce application developed during my Hami Skills internship. Features product categorization, car management, and a clean UI for fresh produce shopping.",
+    tags: ["React", "Internship", "UI/UX", "Frontend"],
+    imageUrl: "/images/hami-market.png",
+    link: "https://github.com/najmabashiir/week3_project",
   },
   {
     id: 2,
