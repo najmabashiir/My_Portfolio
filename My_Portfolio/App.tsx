@@ -10,7 +10,7 @@ import Contact from './components/Contact';
 const ChatBot = lazy(() => import('./components/ChatBot'));
 import { motion } from 'framer-motion';
 import { RESUME_DATA } from './constants';
-import { ArrowDown, Github, Linkedin, Mail, Download, CheckCircle2 } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail, Download, CheckCircle2, Facebook } from 'lucide-react';
 import TypewriterText from './components/TypewriterText';
 
 const App: React.FC = () => {
@@ -80,9 +80,10 @@ const App: React.FC = () => {
 
                 {/* Social Icons */}
                 <div className="flex gap-6 text-slate-500">
-                  <a href="#" className="hover:text-cyan-400 transition-colors"><Github size={24} /></a>
-                  <a href="#" className="hover:text-cyan-400 transition-colors"><Linkedin size={24} /></a>
-                  <a href="#" className="hover:text-cyan-400 transition-colors"><Mail size={24} /></a>
+                  <a href={RESUME_DATA.socials.facebook} target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors"><Facebook size={24} /></a>
+                  <a href={RESUME_DATA.socials.github} target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors"><Github size={24} /></a>
+                  <a href={RESUME_DATA.socials.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors"><Linkedin size={24} /></a>
+                  <a href={`mailto:${RESUME_DATA.email}`} className="hover:text-cyan-400 transition-colors"><Mail size={24} /></a>
                 </div>
               </motion.div>
 

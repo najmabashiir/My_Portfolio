@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, MapPin, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, MapPin, Github, Linkedin, Facebook } from 'lucide-react';
 import { RESUME_DATA } from '../constants';
 
 const Contact: React.FC = () => {
@@ -15,7 +15,7 @@ const Contact: React.FC = () => {
               I'm always interested in hearing about new projects and opportunities.
               Whether you have a question or just want to say hi, feel free to drop me a message!
             </p>
-            
+
             <div className="space-y-4 mb-8">
               <div className="flex items-center gap-3 text-slate-300">
                 <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-indigo-400">
@@ -24,7 +24,7 @@ const Contact: React.FC = () => {
                 <span>{RESUME_DATA.email}</span>
               </div>
               <div className="flex items-center gap-3 text-slate-300">
-                 <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-indigo-400">
+                <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-indigo-400">
                   <MapPin size={20} />
                 </div>
                 <span>{RESUME_DATA.location}</span>
@@ -32,15 +32,30 @@ const Contact: React.FC = () => {
             </div>
 
             <div className="flex gap-4">
-              {[Github, Linkedin, Twitter].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-indigo-600 hover:scale-110 transition-all duration-300"
-                >
-                  <Icon size={20} />
-                </a>
-              ))}
+              <a
+                href={RESUME_DATA.socials.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-indigo-600 hover:scale-110 transition-all duration-300"
+              >
+                <Github size={20} />
+              </a>
+              <a
+                href={RESUME_DATA.socials.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-indigo-600 hover:scale-110 transition-all duration-300"
+              >
+                <Linkedin size={20} />
+              </a>
+              <a
+                href={RESUME_DATA.socials.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-indigo-600 hover:scale-110 transition-all duration-300"
+              >
+                <Facebook size={20} />
+              </a>
             </div>
           </div>
 

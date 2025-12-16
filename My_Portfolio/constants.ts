@@ -9,6 +9,11 @@ export const RESUME_DATA = {
   location: "Somalia-Mogadishu",
   email: "najmabashiir25@gmail.com",
   avatarUrl: "/images/najma.jpeg",
+  socials: {
+    github: "https://github.com/najmabashiir?tab=repositories",
+    linkedin: "https://www.linkedin.com/in/",
+    facebook: "https://www.facebook.com/pretty.najax.diomon/",
+  },
 };
 
 export const SKILLS: Skill[] = [
