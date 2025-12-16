@@ -32,7 +32,7 @@ const App: React.FC = () => {
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_at_center,black_60%,transparent_100%)] pointer-events-none"></div>
 
           <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full">
-            <div className="grid grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
 
               {/* Left Column: Text Info */}
               <motion.div
